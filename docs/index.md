@@ -4,5 +4,5 @@ Hei, olen Herkko Mehtälä ja tämä sivusto sisältää dokumentaation tietover
 
 
 ## Repositorio ja tehtävänannot
-* Tämän nettisivun repositorion löydät [täältä](https://datanetworks.pages.labranet.jamk.fi/ 'Linkki repositorioon')  
+* Tämän nettisivun repositorion löydät [täältä](https://github.com/Herkkomehtala/data-networks-repositorio 'Linkki repositorioon')  
 * Harjoitusten tehtäväannot löydät [täältä](https://datanetworks.pages.labranet.jamk.fi/ 'Linkki sivulle')  
