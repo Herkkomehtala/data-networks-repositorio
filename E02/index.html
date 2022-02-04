@@ -1,0 +1,812 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tietoverkkokurssin dokumentaatio">
+      
+      
+        <meta name="author" content="Herkko Mehtälä / JAMK">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Ensimmäiset kytkimet - Tietoverkkokurssin dokumentaatio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ensimmaiset-kytkimet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-header__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tietoverkkokurssin dokumentaatio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ensimmäiset kytkimet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-nav__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Tietoverkkokurssin dokumentaatio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Tietoverkkokurssin dokumentaatio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E01/" class="md-nav__link">
+        Ensimmäiset virtuaalikoneet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ensimmäiset kytkimet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ensimmäiset kytkimet
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#porttien-tila" class="md-nav__link">
+    Porttien tila
+  </a>
+  
+    <nav class="md-nav" aria-label="Porttien tila">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lubuntujen-verkkoasetukset" class="md-nav__link">
+    Lubuntujen verkkoasetukset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yhteyden-testaus" class="md-nav__link">
+    Yhteyden testaus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwarding-tables" class="md-nav__link">
+    Forwarding tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlanien-luonti" class="md-nav__link">
+    VLAN:ien luonti
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethernet-framen-nuuskiminen-wiresharkilla" class="md-nav__link">
+    Ethernet Framen nuuskiminen wiresharkilla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireshark-kysymykset" class="md-nav__link">
+    Wireshark kysymykset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kytkinten-konfiguroinnin-tallennus" class="md-nav__link">
+    Kytkinten konfiguroinnin tallennus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E03/" class="md-nav__link">
+        Aliverkkojen laskeminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E04/" class="md-nav__link">
+        IP-osoitteisuus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E05/" class="md-nav__link">
+        DHCP ja staattinen reititys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E06/" class="md-nav__link">
+        Fyysinen harjoite
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E07/" class="md-nav__link">
+        STP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E08/" class="md-nav__link">
+        OSPF
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E09/" class="md-nav__link">
+        Palomuuraaminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E10/" class="md-nav__link">
+        NAT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E11/" class="md-nav__link">
+        TCP ja UDP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E12/" class="md-nav__link">
+        Verkon hallinta
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E13/" class="md-nav__link">
+        Apache palvelin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E14/" class="md-nav__link">
+        WLAN
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E15/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#porttien-tila" class="md-nav__link">
+    Porttien tila
+  </a>
+  
+    <nav class="md-nav" aria-label="Porttien tila">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lubuntujen-verkkoasetukset" class="md-nav__link">
+    Lubuntujen verkkoasetukset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yhteyden-testaus" class="md-nav__link">
+    Yhteyden testaus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwarding-tables" class="md-nav__link">
+    Forwarding tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlanien-luonti" class="md-nav__link">
+    VLAN:ien luonti
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethernet-framen-nuuskiminen-wiresharkilla" class="md-nav__link">
+    Ethernet Framen nuuskiminen wiresharkilla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireshark-kysymykset" class="md-nav__link">
+    Wireshark kysymykset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kytkinten-konfiguroinnin-tallennus" class="md-nav__link">
+    Kytkinten konfiguroinnin tallennus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="ensimmaiset-kytkimet">Ensimmäiset kytkimet</h1>
+<p>Ensiksi tuon kytkimen minun virtuaaliympäristöön ja kloonaan sen. Varmistan, että niiden verkko asetukset ovat kohdillaan.
+<img alt="Kuva verkko asetuksista" src="1_Network_switch_settings.png" />
+Samalla konfiguroin lubuntu1 verkkoasetukset adapter 1 -&gt; LAN1 ja lubuntu2 adapter 1 -&gt; LAN3</p>
+<p>Lopulta minun verkkotopologia näyttää tältä:</p>
+<p><img alt="Kuva verkkotopologiasta" src="topology-names.png" /></p>
+<p><a href="https://datanetworks.pages.labranet.jamk.fi/" title="Linkki hänen sivulle">Lähde: Karo Saharinen</a> </p>
+<h2 id="porttien-tila">Porttien tila</h2>
+<p>Käynnistän kytkimen ja kirjaudun sisään. Kytkimen terminaalin sisällä voin käyttää <code>show configuration</code> -komentoa joka näyttää laitteen konfiguroinnin. Voin myös nimetä laitteen uudelleen <code>configure snmp sysName &lt;name&gt;</code> -komennolla ja nimeän sen <code>Switch1</code>. Toinen kytkin nimetään <code>Switch2</code>.
+<img alt="Kuva kytkimen asetuksista" src="2_nimea_switchit.png" /></p>
+<p>Seuraavaksi avaan kytkimistä portit. Tämä toimii komennolla <code>enable ports</code> ja määrittällä portit jotka avataan. Nyt avaan vain portit 1 ja 2. Voin tarkistaa porttien tilan komennolla <code>show ports # info</code></p>
+<p><img alt="Kuva porttien tilasta" src="3_switch1_port_status.png" /></p>
+<p>Tästä näen, että portit 1 ja 2 ovat aktiivisia. Tämä toistetaan kytkimelle <em>Switch2</em></p>
+<h3 id="lubuntujen-verkkoasetukset">Lubuntujen verkkoasetukset</h3>
+<p>Seuraavaksi muutan lubuntujen verkkoasetukset manuaalisesti. Navigoin <code>Edit connections...</code> osioon. Lisään manuaalisesti seuraavan IP-osoitteen ja aliverkkopeitteen:</p>
+<p><img alt="Kuva lubuntun verkkoasetuksista" src="4_lubuntu_verkkoasetukset.png" /></p>
+<p>Tämän jälkeen voin tarkistaa lubuntun terminaalista, että asetukset ovat asettuneet oikein komennolla <code>ip addr</code></p>
+<p><img alt="Kuva lubuntun qterminaalista" src="5_lubuntu_verkkoasetukset_varmistus.png" /></p>
+<p>IP-osoite näyttää olevan oikea.</p>
+<p>Suoritan saman operaation <em>lubuntu2</em>, mutta sen IP-osoite tulee olemaan <code>192.168.0.2</code></p>
+<h3 id="yhteyden-testaus">Yhteyden testaus</h3>
+<p>Tämän jälkeen testaan lubuntejen välisen yhteyden. Tämän voi suorittaa helposti komennolla <code>ping &lt;kohde&gt;</code>. Teen tämän kummallakin lubuntulla.</p>
+<p><img alt="Kuva verkko testista" src="6_ping_testaus.png" /></p>
+<p>Tästä näen, että verkkoasetukset ovat konfiguroitu onnistuneesti.</p>
+<h3 id="forwarding-tables">Forwarding tables</h3>
+<p>Kytkimien forwarding tablet on mahdollista tarkistaa komennolla <code>show fdb</code>:</p>
+<p><img alt="Kuva verkko testista" src="7_switch_forwardtables.png" /></p>
+<p>Vasemmalla näen verkkolaitteiden MAC -osoitteet. Nämä kaksi laitetta ovat minun lubuntu laitteet.</p>
+<h3 id="vlanien-luonti">VLAN:ien luonti</h3>
+<p>Luon VLAN:in komennolla <code>create vlan workstations</code> kytkimen komentoriviltä. VLAN tarvitsee <em>Ethernet 802.1Q</em> tagin jonka voin asettaa komennolla <code>configure vlan workstations tag 5</code>. VLAN on nyt luotu, mutta se ei ole käytössä vielä.</p>
+<p><img alt="Kuva verkko testista" src="8_vlan_asetukset.png" /></p>
+<p>Seuraavaksi porttien väliset yhteydet pitää merkata tagged tai untagged. Palvelimien/työpisteiden ja verkkolaitteiden väliset yhteydet ovat untagged kun taas pelkkien verkkolaitteiden väliset yhteydet ovat tagged. Eli kaikki portit jotka osoittavat lubuntuja kohti ovat untagged. Tämä tehdään komennolla <code>configure vlan workstations add ports &lt;portit&gt; untagged</code>. Tässä tapauksessa se on portti 1. Samalla merkkaan kytkmimien väliset portin tagged komennolla <code>configure vlan workstations add ports 2 tagged</code>.</p>
+<p><img alt="Kuva lubuntujen pingeista" src="9_varmistus.png" /></p>
+<p>Lubuntu työpisteet pystyvät nyt kommunikoimaan toistensa kanssa uudestaan. Kaikki hyvin!</p>
+<p><img alt="Kuva switch fdb" src="9_2_switch_fdb.png" /></p>
+<p>Vielä tarkistan kummankin kytkimen forwarding tablet jotta kaikki on hyvin. Laitteiden MAC osoitteen tarkistamisen jälkeen näen, että työpisteet ovat workstation VLANissa.
+Tässä on hyvä tallentaa kytkimien konfigurointi vielä kun ne toimivat komennolla <code>save</code>.</p>
+<h3 id="ethernet-framen-nuuskiminen-wiresharkilla">Ethernet Framen nuuskiminen wiresharkilla</h3>
+<p>Luon <code>Lubuntu Wireshark</code> virtuaalikoneen ja vaihdan se verkkoasetukset seuraavasti:</p>
+<p><img alt="Kuva wireshark koneen verkkoasetukset" src="10_wireshark_kone.png" /></p>
+<p>Huomaa, että tämä kone menee LAN2, eli kahden kytkimen väliin. Katsotaan, mitä saan nuuskittua.</p>
+<p><img alt="Kuva wiresharkista" src="11_wireshark_nuuskiminen.png" /></p>
+<p>Näyttää siltä, että sain nuuskittua minun kahden lubuntun välistä kommunikaatiota. Annan wiresharkin tallentaa tämän tiedostoon jotta voin analysoida tätä dataa.</p>
+<h3 id="wireshark-kysymykset">Wireshark kysymykset</h3>
+<p>Tarkastelen tallennettua tiedostoa wiresharkilla. Otan yhden ICMP rivin ja tutkin sitä.</p>
+<p><img alt="Kuva wireshark analysointia" src="12_wireshark_analysointi.png" /></p>
+<ol>
+<li>
+<p>Find the source MAC address<br />
+Lähde MAC osoite on 08:00:27:8a:f7:41</p>
+</li>
+<li>
+<p>What is the Ethertype<br />
+Ethertype on IPv4</p>
+</li>
+<li>
+<p>Find the source IP address<br />
+Lähde IP-osoite on 192.168.0.1</p>
+</li>
+<li>
+<p>What is the Payload of the whole capture row?<br />
+ICMP kohdan hex dump:<br />
+<code>0000   00 00 94 90 00 02 08 20 59 60 57 5f 00 00 00 00
+0010   ea ba 09 00 00 00 00 00 10 11 12 13 14 15 16 17
+0020   18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27
+0030   28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 36 37</code><br />
+<img alt="Kuva wireshark payload" src="13_wireshark_payload.png" /></p>
+</li>
+</ol>
+<h3 id="kytkinten-konfiguroinnin-tallennus">Kytkinten konfiguroinnin tallennus</h3>
+<p>Ensin teen seuraavan kytkinten komentoriviin:<br />
+<code>conf vlan workstations ipaddress 192.168.0.253/24</code> ja <code>conf vlan workstations ipaddress 192.168.0.252/24</code></p>
+<p>Tämän jälkeen otan SSH:n käyttöön kytkimissä jotta liittyä kytkimeen minun lubuntu -työpisteeltä.</p>
+<p><img alt="Kuva kytkimen komentorivilta" src="14_ssh.png" /></p>
+<p>Nyt menen lubuntu koneelleni ja otan yhteyden SSH:lla minun kytkimiin:</p>
+<p><img alt="Kuva kytkimen komentorivilta" src="15_ssh2.png" /></p>
+<p>Sitten lataan etänä kummankin kytkimen konfiguraatio tiedostot komennolla <code>show configuration</code>  </p>
+<pre><code>* Switch2.1 # show configuration
+#
+# Module devmgr configuration.
+#
+configure snmp sysName &quot;Switch2&quot;
+configure snmp sysContact &quot;https://www.extremenetworks.com/support/&quot;
+configure sys-recovery-level switch reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1-2
+configure vr VR-Default add ports 1-2
+configure vlan default delete ports 2
+create vlan &quot;workstations&quot;
+configure vlan workstations tag 5
+configure vlan Default add ports 1 untagged  
+configure vlan workstations add ports 1 tagged  
+configure vlan workstations add ports 2 untagged  
+configure vlan workstations ipaddress 192.168.0.252 255.255.255.0
+
+#
+
+
+
+* Switch1.1 # show configuration 
+#
+# Module devmgr configuration.
+#
+configure snmp sysName &quot;Switch1&quot;
+configure snmp sysContact &quot;https://www.extremenetworks.com/support/&quot;
+configure sys-recovery-level switch reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1-2
+configure vr VR-Default add ports 1-2
+configure vlan default delete ports 1
+create vlan &quot;workstations&quot;
+configure vlan workstations tag 5
+configure vlan Default add ports 2 untagged  
+configure vlan workstations add ports 2 tagged  
+configure vlan workstations add ports 1 untagged  
+configure vlan workstations ipaddress 192.168.0.253 255.255.255.0
+
+#
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../E01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ensimmäiset virtuaalikoneet" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Ensimmäiset virtuaalikoneet
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../E03/" class="md-footer__link md-footer__link--next" aria-label="Next: Aliverkkojen laskeminen" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Aliverkkojen laskeminen
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>

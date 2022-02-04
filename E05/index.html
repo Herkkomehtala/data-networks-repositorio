@@ -1,0 +1,835 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tietoverkkokurssin dokumentaatio">
+      
+      
+        <meta name="author" content="Herkko Mehtälä / JAMK">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>DHCP ja staattinen reititys - Tietoverkkokurssin dokumentaatio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dhcp-ja-staattinen-reititys" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-header__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tietoverkkokurssin dokumentaatio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DHCP ja staattinen reititys
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-nav__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Tietoverkkokurssin dokumentaatio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Tietoverkkokurssin dokumentaatio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E01/" class="md-nav__link">
+        Ensimmäiset virtuaalikoneet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E02/" class="md-nav__link">
+        Ensimmäiset kytkimet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E03/" class="md-nav__link">
+        Aliverkkojen laskeminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E04/" class="md-nav__link">
+        IP-osoitteisuus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DHCP ja staattinen reititys
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        DHCP ja staattinen reititys
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dhcp-asentaminen" class="md-nav__link">
+    DHCP asentaminen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staattinen-reititys" class="md-nav__link">
+    Staattinen reititys
+  </a>
+  
+    <nav class="md-nav" aria-label="Staattinen reititys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konffaukset" class="md-nav__link">
+    Konffaukset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E06/" class="md-nav__link">
+        Fyysinen harjoite
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E07/" class="md-nav__link">
+        STP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E08/" class="md-nav__link">
+        OSPF
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E09/" class="md-nav__link">
+        Palomuuraaminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E10/" class="md-nav__link">
+        NAT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E11/" class="md-nav__link">
+        TCP ja UDP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E12/" class="md-nav__link">
+        Verkon hallinta
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E13/" class="md-nav__link">
+        Apache palvelin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E14/" class="md-nav__link">
+        WLAN
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E15/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dhcp-asentaminen" class="md-nav__link">
+    DHCP asentaminen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staattinen-reititys" class="md-nav__link">
+    Staattinen reititys
+  </a>
+  
+    <nav class="md-nav" aria-label="Staattinen reititys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konffaukset" class="md-nav__link">
+    Konffaukset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="dhcp-ja-staattinen-reititys">DHCP ja staattinen reititys</h1>
+<p>Ensin kloonaan ja kytken uudet laitteet vyos2 ja Lubuntu3 tehtävää varten. Kaapelointi tulee tapahtumaan kartan mukaan: </p>
+<p><img alt="Kuva tulevasta kaapeloinnista" src="1_fyysinen_kaapelointi.jpg" />  </p>
+<p>Aloitan kytkemällä Lubuntu3 ja vyos2 yhteen LAN4 kautta. Tämän jälkeen annan uuden aliverkon vyos2:selle käyttämällä komentoa <code>set interface ethernet eth0 address 192.168.89.190/26</code><br />
+Tämän jälkeen annan Lubuntu3 IP osoitteen ja gatewayn. Lopulta asetukset näyttävät tältä:  </p>
+<p><img alt="Kuva Lubuntu3 ja vyos asetuksista" src="2_asetukset.jpg" />  </p>
+<p>Tämän jälkeen testaan toimivuutta pingillä:  </p>
+<p><img alt="Kuva ping" src="3_ping_toimii.jpg" />  </p>
+<p>Toimivuus on testattu! Jatkan kytkemällä Vyos2 ja Vyos1 yhteen RtoR internal network kautta. Asetan kummallekkin reitittimelle IP-osoitteen heidän uuteen rajapintaan:  </p>
+<p><img alt="Kuva interfaceista" src="4_interfaces.jpg" /> </p>
+<p>Testaan vielä, että kaikki toimivat pingillä...  </p>
+<p><img alt="Kuva pingeista" src="5_ping.jpg" /> </p>
+<p>Kaikki toimivat kuten pitää. Nykyinen verkkotopologia näyttää tältä:  </p>
+<p><img alt="Kuva verkkotopologiasta" src="6_verkkotopologia.jpg" /> </p>
+<h2 id="dhcp-asentaminen">DHCP asentaminen</h2>
+<p>Aloitan DHCP asentaminen vyos:seille. Vyosiin voi lisätä DHCP palvelimen <code>configure</code> -moodissa. 
+Tämä tehdään komennoilla:<br />
+<code>set service dhcp-server shared-network-name workstations1 subnet 192.168.89.0/26 default-router 192.168.89.62</code><br />
+<code>set service dhcp-server shared-network-name workstations1 subnet 192.168.89.0/26 range PCs start 192.168.89.1</code><br />
+<code>set service dhcp-server shared-network-name workstations1 subnet 192.168.89.0/26 range PCs stop 192.168.89.61</code>  </p>
+<p>Teen tämän jokaiselle aliverkolle jotka tarvitsevat DHCP:ta. Tässä tapauksessa ne ovat kaikki, paitsi network_devices.  </p>
+<p><img alt="Kuva vyos dhcp konffauksesta" src="7_DHCP_configuration.jpg" /> </p>
+<p>Tämän jälkeen vaihdan Lubuntujen manuaaliset verkkoasetukset automaattiseen ja katsotaan miten käy...  </p>
+<p><img alt="Kuva lubuntu1 verkko konffista" src="8_lubuntu_verkkokonffaus.jpg" /> </p>
+<p>Vielä lisäksi mielenkiinnon perustein katson DHCP palvelimen ja Lubuntu1 välistä keskustelua wiresharkilla:  </p>
+<p><img alt="Kuva wiresharkista" src="9_wireshark.jpg" /> </p>
+<p>Kuten wiresharkin tuloksista näkee, työasema ensin huhuilee yleiseen broadcast osoitteeseen <strong>DHCPdiscover</strong>, että onko verkossa DHCP palvelinta.<br />
+Tämän jälkeen DHCP palvelin <em>(vyos)</em> vastaa <strong>DHCPoffer</strong> paketilla ja antaa työasemalle konfiguraatio parametrit.<br />
+Sitten työasema vastaa tähän <strong>DHCPrequest</strong> paketilla joka pyytää <code>dhcp binding</code> näillä parametreilla.<br />
+Viimeiseksi DHCP palvelin vastaa tähän <strong>DHCPack</strong> paketilla, joka vahvistaa dhcp bindauksen ja parametrit kummallekkin osapuolelle.  </p>
+<p><img alt="Kuva lubuntu ip addr" src="10_ip_addr.jpg" /> </p>
+<p>Kuvasta näkee, että lubuntu1 on saanut IP-osoitteen onnistuneesti.<br />
+On mahdollista tarkistaa dhcp leases menemällä vyosin komentoriville ja käyttää komentoa <code>show dhcp server leases</code>:  </p>
+<p><img alt="Kuva vyos dhcp leases" src="11_dhcp_leases.jpg" />  </p>
+<p>Teen tämän saman toimenpiteen kaikille aliverkoille paitsi network_devices, kuten sanoin aiemmin.  </p>
+<h2 id="staattinen-reititys">Staattinen reititys</h2>
+<p>Seuraavaksi minä säädän staattisen reitityksen vyos1 ja vyos2 välille.  </p>
+<p>Saan luotua staattisen reitityksen käyttämällä komentoa <code>set protocols static route &lt;subnet&gt; next-hop &lt;address&gt;</code>.<br />
+Tässä tapauksessa vyos1 syötän komennon: <code>set protocols static route 192.168.89.128/26 next-hop 10.3.31.130</code><br />
+vyos2 syötän komennot: <code>set protocols static route 192.168.89.0/26 next-hop 10.3.31.129</code> ja  <code>set protocols static route 192.168.89.64/26 next-hop 10.3.31.129</code>  </p>
+<p>Tämän jälkeen testaan staattisen reitityksen toimivuutta <code>ping</code> -ja <code>traceroute</code> komennoilla:  </p>
+<p><img alt="Kuva ping ja tracerouteista" src="12_ping_ja_traceroute.jpg" />  </p>
+<p>Pingit rullaa hienosti!</p>
+<h3 id="konffaukset">Konffaukset</h3>
+<p>Koko verkon topologia näkyy tässä:  </p>
+<p><img alt="Kuva verkkotopologiasta" src="6_verkkotopologia.jpg" />  </p>
+<p><strong>VYOS1:</strong>  </p>
+<pre><code>vyos@vyos:~$ show configuration 
+interfaces {
+    ethernet eth0 {
+        description toRtoSW
+        duplex auto
+        hw-id 08:00:27:63:a0:05
+        smp-affinity auto
+        speed auto
+        vif 5 {
+            address 192.168.89.62/26
+            description workstations1
+        }
+        vif 6 {
+            address 192.168.89.126/26
+            description workstations2
+        }
+        vif 10 {
+            address 10.3.31.30/27
+            description netdev
+        }
+    }
+    ethernet eth2 {
+        address 10.3.31.129/30
+        description toRtoR
+        hw-id 08:00:27:e6:db:28
+    }
+    loopback lo {
+    }
+}
+protocols {
+    static {
+        route 192.168.89.128/26 {
+            next-hop 10.3.31.130 {
+            }
+        }
+    }
+}
+service {
+    dhcp-server {
+        shared-network-name workstations1 {
+            subnet 192.168.89.0/26 {
+                default-router 192.168.89.62
+                range PCs {
+                    start 192.168.89.1
+                    stop 192.168.89.61
+                }
+            }
+        }
+        shared-network-name workstations2 {
+            subnet 192.168.89.64/26 {
+                default-router 192.168.89.126
+                range PCs {
+                    start 192.168.89.65
+                    stop 192.168.89.125
+                }
+            }
+        }
+    }
+    ssh {
+        port 22
+    }
+}
+system {
+    config-management {
+        commit-revisions 100
+    }
+    console {
+        device ttyS0 {
+            speed 9600
+        }
+    }
+    host-name vyos
+    login {
+        user vyos {
+            authentication {
+                encrypted-password ****************
+                plaintext-password ****************
+            }
+            level admin
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level info
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+    time-zone UTC
+}
+</code></pre>
+<p><strong>VYOS2:</strong>  </p>
+<pre><code>vyos@vyos:~$ show configuration 
+interfaces {
+    ethernet eth0 {
+        address 192.168.89.190/26
+        description toLAN4
+        duplex auto
+        hw-id 08:00:27:89:98:4c
+        smp-affinity auto
+        speed auto
+    }
+    ethernet eth1 {
+        address 10.3.31.130/30
+        description toRtoR
+        hw-id 08:00:27:c1:29:c9
+    }
+    loopback lo {
+    }
+}
+protocols {
+    static {
+        route 192.168.89.0/26 {
+            next-hop 10.3.31.129 {
+            }
+        }
+        route 192.168.89.64/26 {
+            next-hop 10.3.31.129 {
+            }
+        }
+    }
+}
+service {
+    dhcp-server {
+        shared-network-name workstations3 {
+            subnet 192.168.89.128/26 {
+                default-router 192.168.89.190
+                range PCs {
+                    start 192.168.89.129
+                    stop 192.168.89.189
+                }
+            }
+        }
+    }
+    ssh {
+        port 22
+    }
+}
+system {
+    config-management {
+        commit-revisions 100
+    }
+    console {
+        device ttyS0 {
+            speed 9600
+        }
+    }
+    host-name vyos
+    login {
+        user vyos {
+            authentication {
+                encrypted-password ****************
+                plaintext-password ****************
+            }
+            level admin
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level info
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+    time-zone UTC
+}
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../E04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IP-osoitteisuus" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              IP-osoitteisuus
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../E06/" class="md-footer__link md-footer__link--next" aria-label="Next: Fyysinen harjoite" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Fyysinen harjoite
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>

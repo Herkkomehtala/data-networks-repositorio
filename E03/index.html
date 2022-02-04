@@ -1,0 +1,929 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tietoverkkokurssin dokumentaatio">
+      
+      
+        <meta name="author" content="Herkko Mehtälä / JAMK">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Aliverkkojen laskeminen - Tietoverkkokurssin dokumentaatio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aliverkkojen-laskeminen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-header__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tietoverkkokurssin dokumentaatio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aliverkkojen laskeminen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-nav__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Tietoverkkokurssin dokumentaatio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Tietoverkkokurssin dokumentaatio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E01/" class="md-nav__link">
+        Ensimmäiset virtuaalikoneet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E02/" class="md-nav__link">
+        Ensimmäiset kytkimet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Aliverkkojen laskeminen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Aliverkkojen laskeminen
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-01" class="md-nav__link">
+    Exercise 01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-02" class="md-nav__link">
+    Exercise 02
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-03" class="md-nav__link">
+    Exercise 03
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-04" class="md-nav__link">
+    Exercise 04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-05" class="md-nav__link">
+    Exercise 05
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-06" class="md-nav__link">
+    Exercise 06
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-up-addresses" class="md-nav__link">
+    Looking up addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internet-registries" class="md-nav__link">
+    Internet Registries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E04/" class="md-nav__link">
+        IP-osoitteisuus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E05/" class="md-nav__link">
+        DHCP ja staattinen reititys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E06/" class="md-nav__link">
+        Fyysinen harjoite
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E07/" class="md-nav__link">
+        STP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E08/" class="md-nav__link">
+        OSPF
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E09/" class="md-nav__link">
+        Palomuuraaminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E10/" class="md-nav__link">
+        NAT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E11/" class="md-nav__link">
+        TCP ja UDP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E12/" class="md-nav__link">
+        Verkon hallinta
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E13/" class="md-nav__link">
+        Apache palvelin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E14/" class="md-nav__link">
+        WLAN
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E15/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-01" class="md-nav__link">
+    Exercise 01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-02" class="md-nav__link">
+    Exercise 02
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-03" class="md-nav__link">
+    Exercise 03
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-04" class="md-nav__link">
+    Exercise 04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-05" class="md-nav__link">
+    Exercise 05
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-06" class="md-nav__link">
+    Exercise 06
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-up-addresses" class="md-nav__link">
+    Looking up addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internet-registries" class="md-nav__link">
+    Internet Registries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="aliverkkojen-laskeminen">Aliverkkojen laskeminen</h1>
+<ul>
+<li>Opiskelijanumeroni: 2003189  </li>
+<li>Muotoilu: vvxyzki  </li>
+<li>192.168.89.0/24  </li>
+<li>10.3.31.0/24 </li>
+</ul>
+<h2 id="exercise-01">Exercise 01</h2>
+<p>What is the usable address range of 192.168.ki.0/24? What is the broadcast address? What is the network address?<br />
++ Usable address range: 256 - 2 = 254<br />
++ Broadcast address: 192.168.89.255<br />
++ Network address: 192.168.89.0  </p>
+<h2 id="exercise-02">Exercise 02</h2>
+<p>Divide the 192.168.89.0/24 into smaller subnets with (atleast) 50 hosts in each.  </p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Original subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New subnet mask</td>
+<td>255.255.255.0</td>
+<td>255.255.255.192</td>
+<td>255.255.255.192</td>
+<td>255.255.255.192</td>
+<td>255.255.255.192</td>
+</tr>
+<tr>
+<td>Number of usable hosts in the subnet</td>
+<td>256 - 2 = 254</td>
+<td>64 - 2 = 62</td>
+<td>64 - 2 = 62</td>
+<td>64 - 2 = 62</td>
+<td>64 - 2 = 62</td>
+</tr>
+<tr>
+<td>Network address</td>
+<td>192.168.89.0/24</td>
+<td>192.168.89.0/26</td>
+<td>192.168.89.64/26</td>
+<td>192.168.89.128/26</td>
+<td>192.168.89.192/26</td>
+</tr>
+<tr>
+<td>First IP host address</td>
+<td>192.168.89.1</td>
+<td>192.168.89.1</td>
+<td>192.168.89.65</td>
+<td>192.168.89.129</td>
+<td>192.168.89.193</td>
+</tr>
+<tr>
+<td>Last IP host address</td>
+<td>192.168.89.254</td>
+<td>192.168.89.62</td>
+<td>192.168.89.126</td>
+<td>192.168.89.190</td>
+<td>192.168.89.254</td>
+</tr>
+<tr>
+<td>Broadcast address</td>
+<td>192.168.89.255</td>
+<td>192.168.89.63</td>
+<td>192.168.89.127</td>
+<td>192.168.89.191</td>
+<td>192.168.89.255</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise-03">Exercise 03</h2>
+<p>Divide the 10.3.31.0/24 into smaller subnets with (atleast) 13 hosts in each.  </p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Original subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New subnet mask</td>
+<td>255.255.255.0</td>
+<td>255.255.255.224</td>
+<td>255.255.255.224</td>
+<td>255.255.255.224</td>
+<td>255.255.255.224</td>
+<td>255.255.255.224</td>
+</tr>
+<tr>
+<td>Number of usable hosts in subnet</td>
+<td>256 - 2 = 254</td>
+<td>32 - 2 = 30</td>
+<td>32 - 2 = 30</td>
+<td>32 - 2 = 30</td>
+<td>32 - 2 = 30</td>
+<td>32 - 2 = 30</td>
+</tr>
+<tr>
+<td>network address</td>
+<td>10.3.31.0</td>
+<td>10.3.31.0</td>
+<td>10.3.31.32</td>
+<td>10.3.31.64</td>
+<td>10.3.31.96</td>
+<td>10.3.31.128</td>
+</tr>
+<tr>
+<td>First IP host address</td>
+<td>10.3.31.1</td>
+<td>10.3.31.1</td>
+<td>10.3.31.33</td>
+<td>10.3.31.65</td>
+<td>10.3.31.97</td>
+<td>10.3.31.129</td>
+</tr>
+<tr>
+<td>Last IP host address</td>
+<td>10.3.31.254</td>
+<td>10.3.31.30</td>
+<td>10.3.31.62</td>
+<td>10.3.31.94</td>
+<td>10.3.31.126</td>
+<td>10.3.31.158</td>
+</tr>
+<tr>
+<td>Broadcast address</td>
+<td>10.3.31.255</td>
+<td>10.3.31.31</td>
+<td>10.3.31.63</td>
+<td>10.3.31.95</td>
+<td>10.3.31.127</td>
+<td>10.3.31.159</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise-04">Exercise 04</h2>
+<p>Divide the last 13 host subnet into smaller subnets with (atleast) 2 hosts in each.  </p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Original subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+<th>Divided subnet info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New subnet mask</td>
+<td>255.255.255.224</td>
+<td>255.255.255.252</td>
+<td>255.255.255.252</td>
+<td>255.255.255.252</td>
+<td>255.255.255.252</td>
+</tr>
+<tr>
+<td>Number of usable hosts in subnet</td>
+<td>32 - 2 = 30</td>
+<td>4 - 2 = 2</td>
+<td>4 - 2 = 2</td>
+<td>4 - 2 = 2</td>
+<td>4 - 2 = 2</td>
+</tr>
+<tr>
+<td>network address</td>
+<td>10.3.31.128</td>
+<td>10.3.31.128</td>
+<td>10.3.31.132</td>
+<td>10.3.31.136</td>
+<td>10.3.31.140</td>
+</tr>
+<tr>
+<td>First IP host address</td>
+<td>10.3.31.129</td>
+<td>10.3.31.129</td>
+<td>10.3.31.133</td>
+<td>10.3.31.137</td>
+<td>10.3.31.141</td>
+</tr>
+<tr>
+<td>Last IP host address</td>
+<td>10.3.31.158</td>
+<td>10.3.31.130</td>
+<td>10.3.31.134</td>
+<td>10.3.31.138</td>
+<td>10.3.31.142</td>
+</tr>
+<tr>
+<td>Broadcast address</td>
+<td>10.3.31.159</td>
+<td>10.3.31.131</td>
+<td>10.3.31.135</td>
+<td>10.3.31.139</td>
+<td>10.3.31.143</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise-05">Exercise 05</h2>
+<p>Is 10.3.31.0/24 a part of 10.3.16.0/16? Write your calculations on paper or do them on the computer. Add the calculations to the documentation (e.g. take a picture of the paper or screenshot).  </p>
+<p><img alt="Kuva Excel taulukosta" src="1_subnet_excel.jpg" /></p>
+<p>10.3.16.0/16 range = 10.3.0.0 - 10.3.255.255<br />
+10.3.31.0/24 is in range of 10.3.16.0/16  </p>
+<h2 id="exercise-06">Exercise 06</h2>
+<p>Is 10.3.31.0/24 a part of 10.0.0.0/8? Write your calculations on paper or do them on the computer. Add the calculations to the documentation (e.g. take a picture of the paper or screenshot).  </p>
+<p><img alt="Kuva Excel_taulukosta" src="2_subnetting_laskenta.JPG" />  </p>
+<p>10.0.0.0/8 range = 10.0.0.0 - 10.255.255.255<br />
+10.3.31.0/24 is in range of 10.0.0.0/8  </p>
+<h2 id="looking-up-addresses">Looking up addresses</h2>
+<p><img alt="Kuva RIPE sivulta" src="3_ripe_sivusto.JPG" />  </p>
+<p><img alt="Kuva RIPE sivulta" src="4_ripe_tulos.JPG" />  </p>
+<p>My IP address belongs to inetnum group of 84.250.0.0 - 84.251.255.255.<br />
+inetnum specifies a range of IPv4 addresses that the inetnum object presents.  </p>
+<p>the netname given for this range is "SONERA-FINLAND-BBNET" which suggests that it is being used by Telia Sonera<br />
+The "descr" confirms this, as it says that it's being operated by "TeliaSonera Finland Oyj".  </p>
+<h2 id="internet-registries">Internet Registries</h2>
+<p>Search for 195.3.31.0/24, 43.3.89.0/24, 15.89.3.0/24 and 100.31.89.0/24<br />
+Who are they registered to? Search through the RIRs:  </p>
+<ul>
+<li>195.3.31.0/24<br />
+Plugging this in RIPE, I get the following results:  </li>
+</ul>
+<p><img alt="Kuva RIPE sivulta" src="5_195_results.JPG" />  </p>
+<p>It seems that it's allocated and is being used by RIPE itself. However, looking at the bottom the "descr" tells that it's been used by LDCOM Networks. I assume things in the bottom section are old information since it's been last modified in 2005 and LDCOM networks went defunct in 2009...  </p>
+<ul>
+<li>43.3.89.0/24<br />
+This IP address belongs under APNIC. </li>
+</ul>
+<p><img alt="Kuva APNIC sivulta" src="6_42_tulos.JPG" />  </p>
+<p>It says that this IP belongs to a group owned by Alibaba Cloud which is a chinese cloud computing company. However, looking more through the list we can see that the "address" is located in Singapore. This makes more sense when you know that Alibaba group's headquaters are located in Singapore.  </p>
+<ul>
+<li>15.89.3.0/24
+This IP address belong under ARIN.  </li>
+</ul>
+<p><img alt="Kuva ARIN sivulta" src="7_15_tulos.JPG" />  </p>
+<p>The site tells us that the IP address belongs to range 15.0.0.0 - 15.103.255.255 which has been given to Hewlett-Packard. That's a weird thing to find out when you're doing this research on HP laptop...  </p>
+<ul>
+<li>100.31.89.0/24<br />
+This one aswell belongs under ARIN.  </li>
+</ul>
+<p><img alt="Kuva ARIN sivulta" src="8_100_tulos.JPG" />  </p>
+<p>The IP address belongs to a range of 100.24.0.0 - 100.31.255.255 and is being operated by AMAZON. Full name gives us Amazon data services 'NoVa'. Only thing I could find about Amazon NoVa was an article about Northern Virginia Community College (NOVA) being in collaboration with Amazon Web Services (AWS) Educate program. The time frame would match as this was announced in June 2018 and the IP was reserved in April 2018.<br />
+https://aws.amazon.com/blogs/publicsector/major-in-the-cloud-nova-and-aws-announce-first-cloud-computing-degree/  </p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../E02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ensimmäiset kytkimet" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Ensimmäiset kytkimet
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../E04/" class="md-footer__link md-footer__link--next" aria-label="Next: IP-osoitteisuus" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              IP-osoitteisuus
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>

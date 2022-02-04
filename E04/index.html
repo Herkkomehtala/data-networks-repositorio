@@ -1,0 +1,1230 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tietoverkkokurssin dokumentaatio">
+      
+      
+        <meta name="author" content="Herkko Mehtälä / JAMK">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>IP-osoitteisuus - Tietoverkkokurssin dokumentaatio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ip-osoitteisuus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-header__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tietoverkkokurssin dokumentaatio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IP-osoitteisuus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tietoverkkokurssin dokumentaatio" class="md-nav__button md-logo" aria-label="Tietoverkkokurssin dokumentaatio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Tietoverkkokurssin dokumentaatio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Tietoverkkokurssin dokumentaatio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E01/" class="md-nav__link">
+        Ensimmäiset virtuaalikoneet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E02/" class="md-nav__link">
+        Ensimmäiset kytkimet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E03/" class="md-nav__link">
+        Aliverkkojen laskeminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IP-osoitteisuus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        IP-osoitteisuus
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vyos-asetukset" class="md-nav__link">
+    vyos asetukset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lubuntujen-asetukset" class="md-nav__link">
+    Lubuntujen asetukset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kytkimien-asetukset" class="md-nav__link">
+    Kytkimien asetukset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-moment-of-truth" class="md-nav__link">
+    The moment of truth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konffaukset" class="md-nav__link">
+    Konffaukset
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E05/" class="md-nav__link">
+        DHCP ja staattinen reititys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E06/" class="md-nav__link">
+        Fyysinen harjoite
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E07/" class="md-nav__link">
+        STP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E08/" class="md-nav__link">
+        OSPF
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E09/" class="md-nav__link">
+        Palomuuraaminen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E10/" class="md-nav__link">
+        NAT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E11/" class="md-nav__link">
+        TCP ja UDP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E12/" class="md-nav__link">
+        Verkon hallinta
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E13/" class="md-nav__link">
+        Apache palvelin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E14/" class="md-nav__link">
+        WLAN
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E15/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vyos-asetukset" class="md-nav__link">
+    vyos asetukset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lubuntujen-asetukset" class="md-nav__link">
+    Lubuntujen asetukset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kytkimien-asetukset" class="md-nav__link">
+    Kytkimien asetukset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-moment-of-truth" class="md-nav__link">
+    The moment of truth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konffaukset" class="md-nav__link">
+    Konffaukset
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="ip-osoitteisuus">IP-osoitteisuus</h1>
+<p>Ensin pitää lisätä vyos -reititin verkkoon. Teen tämän kytkemällä Switch2 ja vyos:in yhteen uuteen verkkoon virtuaaliboxissa. Näihin kumpaankin lisään uuden internal network adapterin ja nimeän sen RtoSW.  </p>
+<p><img alt="Kuva verkkoasetuksista" src="1_network_settings.jpg" />  </p>
+<p>Tämän jälkeen verkon fyysinen topologia näyttää tältä:  </p>
+<p><img alt="Kuva verkkotopologiasta" src="2_topograafinen_kartta.jpg" />  </p>
+<p>Portit tulevat näyttämään tältä:  </p>
+<p><img alt="Kuva verkkotopologiasta" src="2_topograafinen_kartta_portit.jpg" />  </p>
+<h2 id="vyos-asetukset">vyos asetukset</h2>
+<p>Haluan lisätä vyos eth0 rajapintaan descriptionin "toRtoSW" selveyden takia. Kirjaudun sisään ja menen <code>configure</code> -moodiin. Sen jälkeen  syötän komentoriville <code>set interfaces ethernet eth0 description toRtoSW</code>.  </p>
+<p><img alt="Kuva vyos asetuksista" src="3_vyos_asetukset.jpg" />  </p>
+<p>Tämän jälkeen alan muuttamaan itse eth0 rajapinnan konfiguraatiota.  </p>
+<p>Konfiguroin tehtävänannon mukaan ekat VLANit niin, että minun <em>Exercise 02</em> tekemät aliverkot olisivat näissä. Näihin VLANeihin tulee minun Lubuntut.  </p>
+<p><img alt="Kuva vif asetuksista" src="4_vif_asetukset.jpg" />  </p>
+<p>Lajittelen vyos -gateway/router niin, että se on kaikkien aliverkkojen viimeinen käytettävä IP-osoite.  </p>
+<p>Tämän jälkeen käytän <code>show interfaces</code> -komentoa nähdäkseni minun rajapinnat.</p>
+<p><img alt="Kuva interfacesta" src="5_interfaces.jpg" />  </p>
+<p>Näen, että VLANit ovat konfiguroitu. Tallennan nämä käyttämällä <code>commit</code> ja <code>save</code> -komentoa. Palaan show -moodiin tarkastamaan asetuksiani.  </p>
+<p><img alt="Kuva interfaces asetuksista" src="6_show_interfaces.jpg" />  </p>
+<h2 id="lubuntujen-asetukset">Lubuntujen asetukset</h2>
+<p>Lubuntu -työasemien verkkoasetukset pitää vaihtaa uuden verkkolajitelman mukaisesti.  </p>
+<p><img alt="Kuva Lubuntu asetuksista" src="7_lubuntu.jpg" />  </p>
+<p>Kuvassa näkyy Lubuntujen uudet verkkoasetukset. Lubuntujen IP-osoitteet ovat heidän aliverkkojen ensimmäiset käytettävät IP-osoitteet, kun taas heidän gateway (vyos) on heidän aliverkon viimeinen käytettävä IP-osoite.  </p>
+<h2 id="kytkimien-asetukset">Kytkimien asetukset</h2>
+<p>Seuraavaksi luon uuden VLANin jonka nimeksi tulee <code>network_devices</code>. Annan niille uuden Ethernet 802.1Q tagin joka on tässä tapauksessa tag 10.  </p>
+<p><img alt="Kuva switch2 VLAN tagauksesta" src="8_switch_vlan_luonti.jpg" />  </p>
+<p>Tämän jälkeen portit jotka osoittavat vyos reittimeen ja kytkimiin tägätään.  </p>
+<p>Kun portit on tägätty, exercise 02 asennetut IP-osoitteet kytkimille pitää poistaa. Tämä tehdään komennolla <code>unconfigure vlan &lt;vlan&gt; ipaddress</code>. 
+Tämän jälkeen lisäämme kytkimille Exercise 03 tehdyn IP-osoitteen ja maskin komennolla <code>configure vlan network_devices ipaddress &lt;ip&gt; &lt;mask&gt;</code>:<br />
+<strong>HUOM!!!</strong> Kuvassa näkyvät IP osoitteet eivät ole lopullisia IP-osoitteita joita käytin. Vaikka nämä toimivat, niin vaihdoin subnettausta hieman jotta minulla riittää IP-osoitteita seuraaviin tehtäviin. Todelliset IP-osoitteet näet tämän osion lopussa.  </p>
+<p><img alt="Kuva switch ip asetuksista" src="9_switch_ip_interface.jpg" />  </p>
+<p>Sitten vielä syötän kytkimille gateway IP-osoitteen. Tarkoitus on, että jokaisen aliverkon viimeinen käytettävä IP-osoite on gateway:n IP, joten tässä tapauksessa se on 10.3.31.46. Tämä lisätään komennolla: <code>configure iproute add default &lt;ip of router&gt;</code>.<br />
+Viimeiseksi lisätään tämä aliverkko vyos -reitittimmelle komennolla <code>set interfaces ethernet eth0 vif 10 address 10.3.31.46/28</code>.  </p>
+<p><img alt="Kuva vyos interfacesta" src="10_vyos_interfaces.jpg" />  </p>
+<p>Lopulta minun <em>(lopullinen)</em> aliverkoitus näyttää tältä:  </p>
+<p><img alt="Kuva subnettauksesta" src="11_subnet_picture.jpg" /></p>
+<h2 id="the-moment-of-truth">The moment of truth</h2>
+<p>Nyt testaan verkon toimivuutta pingaamalla ja tracerouttaamalla työasemia. Mitäköhän tapahtuu?  </p>
+<p><img alt="Kuva pingauksesta" src="12_ping.jpg" />  </p>
+<p>Kaikki näyttää toimivan kuten pitää! </p>
+<h2 id="konffaukset">Konffaukset</h2>
+<p>network_devices konfiguroinnit ovat tässä:<br />
+<strong>VYOS:</strong>  </p>
+<pre><code>vyos@vyos:~$ show configuration 
+interfaces {
+interfaces {
+    ethernet eth0 {
+        description toRtoSW
+        duplex auto
+        hw-id 08:00:27:63:a0:05
+        smp-affinity auto
+        speed auto
+        vif 5 {
+            address 192.168.89.62/26
+            description workstations1
+        }
+        vif 6 {
+            address 192.168.89.126/26
+            description workstations2
+        }
+        vif 10 {
+            address 10.3.31.46/28
+            description netdev
+        }
+    }
+    loopback lo {
+    }
+}
+protocols {
+}
+service {
+    ssh {
+        port 22
+    }
+}
+system {
+    config-management {
+        commit-revisions 100
+    }
+    console {
+        device ttyS0 {
+            speed 9600
+        }
+    }
+    host-name vyos
+    login {
+        user vyos {
+            authentication {
+                encrypted-password ****************
+                plaintext-password ****************
+            }
+            level admin
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level info
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+    time-zone UTC
+}
+</code></pre>
+<p><strong>Switch1:</strong>  </p>
+<pre><code>* Switch1.1 # show configuration 
+#
+# Module devmgr configuration.
+#
+configure snmp sysName &quot;Switch1&quot;
+configure snmp sysContact &quot;https://www.extremenetworks.com/support/&quot;
+configure sys-recovery-level switch reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1-2
+configure vr VR-Default add ports 1-2
+configure vlan default delete ports 1-2
+create vlan &quot;network_devices&quot;
+configure vlan network_devices tag 10
+create vlan &quot;workstations&quot;
+configure vlan workstations tag 5
+create vlan &quot;workstations2&quot;
+configure vlan workstations2 tag 6
+configure vlan network_devices add ports 2 tagged  
+configure vlan workstations add ports 2 tagged  
+configure vlan workstations add ports 1 untagged  
+configure vlan workstations2 add ports 2 tagged  
+configure vlan network_devices ipaddress 10.3.31.33 255.255.255.240
+
+#
+# Module mcmgr configuration.
+#
+
+#
+# Module otm configuration.
+#
+
+#
+# Module fdb configuration.
+#
+disable iparp vr VR-Mgmt refresh
+disable neighbor-discovery vr VR-Mgmt refresh
+
+#
+# Module rtmgr configuration.
+#
+configure iproute add default 10.3.31.46
+enable icmp useredirects
+
+#
+# Module policy configuration.
+#
+configure policy slices tci-overwrite 0
+
+#
+# Module aaa configuration.
+#
+configure account admin encrypted &quot;$5$LVUMiH$OmC73PnstIHrVfPRZiAJdGyv.u4rlpdGFNscvg5P7A5&quot; 
+
+#
+# Module acl configuration.
+#
+
+
+
+
+#
+# Module bfd configuration.
+#
+
+#
+# Module bgp configuration.
+#
+
+#
+# Module cfgmgr configuration.
+#
+
+#
+# Module dnsAnalytics configuration.
+#
+
+#
+# Module dosprotect configuration.
+#
+
+#
+# Module dot1ag configuration.
+#
+
+#
+# Module eaps configuration.
+#
+
+#
+# Module edp configuration.
+#
+
+#
+# Module elrp configuration.
+#
+
+#
+# Module ems configuration.
+#
+
+#
+# Module epm configuration.
+#
+
+#
+# Module erps configuration.
+#
+
+#
+# Module esrp configuration.
+#
+
+#
+# Module etmon configuration.
+#
+
+#
+# Module exsshd configuration.
+#
+enable ssh2
+
+#
+# Module hal configuration.
+#
+configure ports 1 debounce time 0
+configure ports 2 debounce time 0
+
+#
+# Module idMgr configuration.
+#
+
+#
+# Module ipSecurity configuration.
+#
+
+#
+# Module isis configuration.
+#
+
+#
+# Module lldp configuration.
+#
+
+#
+# Module mrp configuration.
+#
+
+#
+# Module msdp configuration.
+#
+
+#
+# Module netLogin configuration.
+#
+
+#
+# Module netTools configuration.
+#
+
+#
+# Module nodealias configuration.
+#
+
+#
+# Module ntp configuration.
+#
+
+#
+# Module ospf configuration.
+#
+
+#
+# Module ospfv3 configuration.
+#
+
+#
+# Module pim configuration.
+#
+
+#
+# Module poe configuration.
+#
+
+#
+# Module rip configuration.
+#
+
+#
+# Module ripng configuration.
+#
+
+#
+# Module snmpMaster configuration.
+#
+configure snmpv3 engine-id 03:08:00:27:87:1f:97
+
+#
+# Module stp configuration.
+#
+configure mstp region 080027871f97
+disable stpd s0
+
+#
+# Module techSupport configuration.
+#
+
+#
+# Module telnetd configuration.
+#
+disable telnet
+
+#
+# Module tftpd configuration.
+#
+
+#
+# Module thttpd configuration.
+#
+
+#
+# Module twamp configuration.
+#
+
+#
+# Module vmt configuration.
+#
+
+#
+# Module vrrp configuration.
+#
+
+#
+# Module vsm configuration.
+#
+
+#
+# Module vpex configuration.
+#
+
+</code></pre>
+<p><strong>Switch2:</strong>  </p>
+<pre><code>* EXOS-VM.1 # show configuration 
+#
+# Module devmgr configuration.
+#
+configure snmp sysContact &quot;https://www.extremenetworks.com/support/&quot;
+configure sys-recovery-level switch reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1-3
+configure vr VR-Default add ports 1-2
+configure vlan default delete ports 1-3
+create vlan &quot;network_devices&quot;
+configure vlan network_devices tag 10
+create vlan &quot;workstations1&quot;
+configure vlan workstations1 tag 5
+create vlan &quot;workstations2&quot;
+configure vlan workstations2 tag 6
+configure vlan network_devices add ports 1,3 tagged  
+configure vlan workstations1 add ports 1,3 tagged  
+configure vlan workstations2 add ports 1,3 tagged  
+configure vlan workstations2 add ports 2 untagged  
+configure vlan network_devices ipaddress 10.3.31.34 255.255.255.240
+
+#
+# Module mcmgr configuration.
+#
+
+#
+# Module otm configuration.
+#
+configure virtual-network add network ports 1-2 
+
+#
+# Module fdb configuration.
+#
+disable iparp vr VR-Mgmt refresh
+disable neighbor-discovery vr VR-Mgmt refresh
+
+#
+# Module rtmgr configuration.
+#
+configure iproute add default 10.3.31.46
+enable icmp useredirects
+
+#
+# Module policy configuration.
+#
+configure policy slices tci-overwrite 0
+
+#
+# Module aaa configuration.
+#
+configure account admin encrypted &quot;$5$LVUMiH$OmC73PnstIHrVfPRZiAJdGyv.u4rlpdGFNscvg5P7A5&quot; 
+
+#
+# Module acl configuration.
+#
+
+
+
+
+#
+# Module bfd configuration.
+#
+
+#
+# Module bgp configuration.
+#
+
+#
+# Module cfgmgr configuration.
+#
+
+#
+# Module dnsAnalytics configuration.
+#
+
+#
+# Module dosprotect configuration.
+#
+
+#
+# Module dot1ag configuration.
+#
+
+#
+# Module eaps configuration.
+#
+
+#
+# Module edp configuration.
+#
+
+#
+# Module elrp configuration.
+#
+
+#
+# Module ems configuration.
+#
+
+#
+# Module epm configuration.
+#
+
+#
+# Module erps configuration.
+#
+
+#
+# Module esrp configuration.
+#
+
+#
+# Module etmon configuration.
+#
+
+#
+# Module exsshd configuration.
+#
+enable ssh2
+
+#
+# Module hal configuration.
+#
+configure ports 1 debounce time 0
+configure ports 2 debounce time 0
+configure ports 3 debounce time 0
+
+#
+# Module idMgr configuration.
+#
+
+#
+# Module ipSecurity configuration.
+#
+
+#
+# Module isis configuration.
+#
+
+#
+# Module lldp configuration.
+#
+disable lldp ports 3
+
+#
+# Module mrp configuration.
+#
+
+#
+# Module msdp configuration.
+#
+
+#
+# Module netLogin configuration.
+#
+
+#
+# Module netTools configuration.
+#
+
+#
+# Module nodealias configuration.
+#
+configure nodealias ports 1 maxentries 4096
+configure nodealias ports 2 maxentries 4096
+
+#
+# Module ntp configuration.
+#
+
+#
+# Module ospf configuration.
+#
+
+#
+# Module ospfv3 configuration.
+#
+
+#
+# Module pim configuration.
+#
+
+#
+# Module poe configuration.
+#
+
+#
+# Module rip configuration.
+#
+
+#
+# Module ripng configuration.
+#
+
+#
+# Module snmpMaster configuration.
+#
+configure snmpv3 engine-id 03:08:00:27:87:1f:97
+
+#
+# Module stp configuration.
+#
+configure mstp region 080027871f97
+disable stpd s0
+
+#
+# Module techSupport configuration.
+#
+
+#
+# Module telnetd configuration.
+#
+disable telnet
+
+#
+# Module tftpd configuration.
+#
+
+#
+# Module thttpd configuration.
+#
+
+#
+# Module twamp configuration.
+#
+
+#
+# Module vmt configuration.
+#
+
+#
+# Module vrrp configuration.
+#
+
+#
+# Module vsm configuration.
+#
+
+#
+# Module vpex configuration.
+#
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../E03/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Aliverkkojen laskeminen" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Aliverkkojen laskeminen
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../E05/" class="md-footer__link md-footer__link--next" aria-label="Next: DHCP ja staattinen reititys" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              DHCP ja staattinen reititys
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>
